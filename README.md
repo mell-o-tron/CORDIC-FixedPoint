@@ -52,3 +52,5 @@ The second one uses a lookup table of fixed point `atan` values.  Running time `
 
 ![](https://github.com/mell-o-tron/CORDIC-FixedPoint/blob/main/fixed_lookup.png)
 
+
+For reference, the standard `math.h` cosine function is executed 5000000 times in just `0.008872` seconds on my setup, lol.

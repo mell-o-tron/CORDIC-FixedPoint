@@ -193,4 +193,6 @@ int main(){
     puts("execution time not measured");
     
 #endif
+    
+    return 0;
 }
