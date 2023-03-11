@@ -23,7 +23,7 @@ void print_as_float(int x){
  * returns a (rather bad) approximation of the cosine, but faster! 
  */
 int cordic_cos_fixed_point_8dec_approx(int theta){
-    int x = 60725293;                   // tangent factor
+    int x = 60725293;                   // cosine product
     int y = 0;
     int z = 0;   
     

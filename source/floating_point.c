@@ -8,7 +8,7 @@
  * for tangent approx error
  */
 float cordic_cos_float(float theta){
-    float x = 0.60725293;                   // tangent factor
+    float x = 0.60725293;                   // cosine product
     float y = 0;
     float z = 0;
     
@@ -31,7 +31,7 @@ float cordic_cos_float(float theta){
  * does not compensate for the tangent approx
  */
 float cordic_cos_float_approx(float theta){
-    float x = 0.60725293;       // tangent factor
+    float x = 0.60725293;                   // cosine product
     float y = 0;
     float z = 0;   
     
