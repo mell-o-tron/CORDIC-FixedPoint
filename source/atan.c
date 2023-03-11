@@ -1,8 +1,7 @@
-// Taken from Stackoverflow: https://stackoverflow.com/questions/23047978/how-is-arctan-implemented
-
 #include <math.h>
 
-float my_atan (float x)
+// Taken from Stackoverflow: https://stackoverflow.com/questions/23047978/how-is-arctan-implemented
+float my_atan (float x) 
 {
     float a, z, p, r, q, s, t;
     /* argument reduction: 
