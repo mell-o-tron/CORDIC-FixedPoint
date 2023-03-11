@@ -5,7 +5,7 @@ A performance test for trigonometric functions, computed with the CORDIC method.
 ## CORDIC Method
 
 Starting from $v_0 = (1,0)$, a "rotational binary search" is performed, that aims to align $v_i$ with a vector at an angle $\theta$
- from the $x$ axis. Ideally, the rotation step size is initially 45° in either the clockwise or counterclockwise direction, until convergence. Practically, since we don't necessarily want to keep a table of values of the tan function, the approximation $\tan \Big( \dfrac{2^{-i} \pi}{4}  \Big) \sim 2^{-i}$ is used. 
+ from the $x$ axis. Ideally, the rotation step size is initially 45° in either the clockwise or counterclockwise direction, and is then halved at each step until convergence. Practically, since we don't necessarily want to keep a table of values of the tan function, the approximation $\tan \Big( \dfrac{2^{-i} \pi}{4}  \Big) \sim 2^{-i}$ is used. 
  
  Every iteration is computed via a matrix multiplication. Let $\sigma_i$ = i-th step-size:
   
