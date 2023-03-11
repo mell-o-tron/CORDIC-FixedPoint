@@ -13,7 +13,7 @@ Starting from $v_0 = (1,0)$, a "rotational binary search" is performed, that aim
 
 By applying the matrix multiplication repeatedly, we get the following: 
 
-$\cos(\sigma_0)\cdot ... \cdot \cos (sigma_n) M_0\cdot ... \cdot M_n \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} x \\ y \end{pmatrix}$
+$\cos(\sigma_0)\cdot ... \cdot \cos (sigma_n) M_0\cdot ... \cdot M_n$ $\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} x \\ y \end{pmatrix}$
 
 Where $x$ and $y$ are respectively an approximation of the cosine and sine of the angle.
 
