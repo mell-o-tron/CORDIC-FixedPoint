@@ -9,11 +9,11 @@ Starting from $v_0 = (1,0)$, a "rotational binary search" is performed, that aim
  
  Every iteration is computed via a matrix multiplication. Let $\sigma_i$ = i-th step-size:
   
- $R_i = \begin{pmatrix} \cos(\sigma_i) & -\sin(\sigma_i) \\ \sin(\sigma_i) & \cos(\sigma_i) \end{pmatrix} = cos(\sigma_i) \begin{pmatrix} 1 & -\tan(\sigma_i) \\ \tan(\sigma_i) & 1 \end{pmatrix}$
+![](https://github.com/mell-o-tron/CORDIC-FixedPoint/blob/main/Formulas/for%201.png)
 
 By applying the matrix multiplication repeatedly, we get the following: 
 
-$\cos(\sigma_0)\cdot ... \cdot \cos (sigma_n) M_0\cdot ... \cdot M_n$ $\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} x \\ y \end{pmatrix}$
+![](https://github.com/mell-o-tron/CORDIC-FixedPoint/blob/main/Formulas/for%202.png)
 
 Where $x$ and $y$ are respectively an approximation of the cosine and sine of the angle.
 
