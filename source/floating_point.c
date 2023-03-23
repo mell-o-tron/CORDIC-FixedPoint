@@ -191,6 +191,9 @@ int main(){
 #if 1   // metering toggle
     clock_t start, end;
     double execution_time;
+     
+    double POWER = 30.0;        // Watt consumption of host machine
+    double CO2perKWh = 250;     // CO2 g/kWh
     
     puts("approx version:");
     start = clock();
@@ -199,8 +202,12 @@ int main(){
     
     end = clock();
     execution_time = ((double)(end - start))/CLOCKS_PER_SEC;
+    double consumption = (execution_time * POWER) / (3600000);
+    double co2 = CO2perKWh * consumption;
+    
     
     printf("execution time in seconds : %f\n\n", execution_time);
+    printf("CO-2eq: %f\n", co2);
     
     puts("non-approx version:");
     start = clock();
@@ -210,7 +217,14 @@ int main(){
     end = clock();
     execution_time = ((double)(end - start))/CLOCKS_PER_SEC;
     
+    consumption = (execution_time * POWER) / (3600000);
+    co2 = CO2perKWh * consumption;
+    
+    
     printf("execution time in seconds : %f\n", execution_time);
+    
+    printf("CO-2eq: %f\n", co2);
+    
     
     puts("lookup version:");
     start = clock();
@@ -219,8 +233,11 @@ int main(){
     
     end = clock();
     execution_time = ((double)(end - start))/CLOCKS_PER_SEC;
+    consumption = (execution_time * POWER) / (3600000);
+    co2 = CO2perKWh * consumption;
     
     printf("execution time in seconds : %f\n", execution_time);
+    printf("CO-2eq: %f\n", co2);
 #else
     puts("execution time not measured");
 #endif
