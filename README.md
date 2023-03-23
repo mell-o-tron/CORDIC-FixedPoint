@@ -21,22 +21,36 @@ The product of cosines is computed, given the approximation mentioned earlier, a
 
 ## Functions
 
-The functions implemented here are different implementations of the cosine function. 
+The functions implemented here are different implementations of the cosine function. The data refers to the performance on my own, rater crappy, 2015 laptop computer (`Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz`)
 
 ### Floating point implementations
 
-The first version uses an implementation of the atan function I found on stackoverflow to compensate for the tangent approximation. Running time `4.564983 seconds` for 5000000 iterations.
+The first version uses an implementation of the atan function I found on stackoverflow to compensate for the tangent approximation. For 5000000 iterations:
+
+```
+execution time in seconds : 7.060013
+CO-2eq: 0.014708
+```
 
 ![](https://github.com/mell-o-tron/CORDIC-FixedPoint/blob/main/float.png)
 
 
-The second version does not compensate for the approximation at all. Running time `0.568714 seconds` for 5000000 iterations.
+The second version does not compensate for the approximation at all. For 5000000 iterations:
 
+```
+execution time in seconds : 1.049544
+CO-2eq: 0.002187
+```
 
 ![](https://github.com/mell-o-tron/CORDIC-FixedPoint/blob/main/float_approx.png)
 
 
-The third version uses a lookup table of `atan` values. Running time `0.943545 seconds` for 5000000 iterations.
+The third version uses a lookup table of `atan` values. For 5000000 iterations:
+
+```
+execution time in seconds : 1.757478
+CO-2eq: 0.003661
+```
 
 
 ![](https://github.com/mell-o-tron/CORDIC-FixedPoint/blob/main/float_lookup.png)
@@ -44,13 +58,24 @@ The third version uses a lookup table of `atan` values. Running time `0.943545 s
 
 ### Fixed point implementations
 
-The first fixed point version does not compensate for the approximation. Running time `0.245440` for 5000000 iterations.
+The first fixed point version does not compensate for the approximation. For 5000000 iterations:
+
+```
+execution time in seconds: 0.399688
+CO-2eq: 0.000833
+```
 
 ![](https://github.com/mell-o-tron/CORDIC-FixedPoint/blob/main/fixed_approx.png)
 
-The second one uses a lookup table of fixed point `atan` values.  Running time `0.348289` for 5000000 iterations.
+The second one uses a lookup table of fixed point `atan` values.
+
+```
+execution time in seconds: 0.616319
+CO-2eq: 0.001284
+
+```
 
 ![](https://github.com/mell-o-tron/CORDIC-FixedPoint/blob/main/fixed_lookup.png)
 
 
-For reference, the standard `math.h` cosine function is executed 5000000 times in just `0.008872` seconds on my setup, lol.
+For reference, the standard `math.h` cosine function is executed 5000000 times in just `0.016892` seconds on my setup, lol.
